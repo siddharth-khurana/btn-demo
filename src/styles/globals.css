@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: #000;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.taper-secondary {
+  clip-path: polygon(
+    20px 0%,
+    100% 0%,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0% 100%,
+    0% 20px
+  );
+}
+
+.taper-secondary-inner {
+  clip-path: polygon(
+    21px 1px,
+    calc(100% - 1px) 1px,
+    calc(100% - 1px) calc(100% - 21px),
+    calc(100% - 21px) calc(100% - 1px),
+    1px calc(100% - 1px),
+    1px 21px
+  );
+}
+
+.taper-primary {
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - 20px) 0%,
+    100% 20px,
+    100% 100%,
+    20px 100%,
+    0% calc(100% - 20px)
+  );
+}
